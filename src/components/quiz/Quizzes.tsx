@@ -1,16 +1,20 @@
-import React, { useEffect } from "react";
-// import Quiz from "./Quiz";
+import { useAppSelector } from "../../redux/hooks";
+import Quiz from "./Quiz";
 
 
 
 function Quizzes () {
-//   const quizzes = useSelector((state) => state.allQuizzes.quizzes);
+  const quizzesSelector = useAppSelector(state => state.quizzes)
 
   return (
-    <div className="quizList">
-        <a>quizzes will be here</a>
+    <div>
+        {
+            quizzesSelector.quizzes.map(q => {
+                return <Quiz key = {q.id} title = {q.title} description={q.description} isArchived = {q.isArchived}/>
+            })
+        }
     </div>
-  );
+  )
 };
 
 export default Quizzes;
