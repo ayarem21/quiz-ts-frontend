@@ -4,6 +4,7 @@ import { fetchQuizzesAsync } from './slices/quiz/quizeSlice';
 import { useAppDispatch } from './redux/hooks';
 import { Link } from 'react-router-dom';
 import QuizRouter from './QuizRouter';
+import QuizForm from './components/quiz/QuizForm';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -18,6 +19,7 @@ function App() {
         <li><Link to='/quizzes'>Quizzes</Link></li>
       </ul> 
       <QuizRouter />
+      <QuizForm/>
   </div> 
   );
 }
