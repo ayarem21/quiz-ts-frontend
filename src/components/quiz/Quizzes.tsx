@@ -8,10 +8,7 @@ function Quizzes () {
 
   return (
     <div className="quizList">
-    {/* //     {quizzes.map((quiz) => { */}
-    {/* //         return <Quiz key={quiz.id} quiz={quiz} />; */}
-    {/* //       }) */}
-    {/* //     } */}
+        <a>quizzes will be here</a>
     </div>
   );
 };
