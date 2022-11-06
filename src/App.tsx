@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import { fetchQuizzesAsync } from './slices/quiz/quizeSlice';
+import { useAppDispatch } from './redux/hooks';
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(
+    () => {
+      dispatch(fetchQuizzesAsync())
+    },
+    [])
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
