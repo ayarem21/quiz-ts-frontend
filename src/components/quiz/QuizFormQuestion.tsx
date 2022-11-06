@@ -1,14 +1,12 @@
-import { FormProvider } from "react-hook-form";
-import useCreateQuizForm from "./hooks/useQuizForm";
-import useQuizFromField from "./hooks/useQuizFromField";
+import useQuizFromQuestion from "./hooks/useQuizFromQuestion";
 
-const QuizFormField = () => {
+const QuizFormQuestion = () => {
   const {
     fields,
     register,
     addNewQuestion,
     removeQuestion
-  } = useQuizFromField();
+  } = useQuizFromQuestion();
 
   return (
     <div>
@@ -37,4 +35,4 @@ const QuizFormField = () => {
   );
 }
 
-export default QuizFormField;
+export default QuizFormQuestion;

@@ -2,7 +2,7 @@
 import { QuizInterface } from '../../../interfaces/quiz/quizInterface';
 import { useForm } from 'react-hook-form';
  
-function useFriendsForm() {
+function useQuizForm() {
   const methods = useForm<QuizInterface>({
     defaultValues: {
       title: '',
@@ -22,4 +22,4 @@ function useFriendsForm() {
   };
 }
  
-export default useFriendsForm;
+export default useQuizForm;

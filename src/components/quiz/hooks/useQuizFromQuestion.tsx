@@ -1,7 +1,7 @@
 import { useFieldArray, useFormContext } from 'react-hook-form';
 import { QuizInterface } from '../../../interfaces/quiz/quizInterface';
  
-function useQuizFromField() {
+function useQuizFromQuestion() {
     const { control, register } = useFormContext<QuizInterface>();
 
     const { fields, append, remove } = useFieldArray<QuizInterface>({
@@ -27,5 +27,5 @@ function useQuizFromField() {
   };
 }
  
-export default useQuizFromField;
+export default useQuizFromQuestion;
 
