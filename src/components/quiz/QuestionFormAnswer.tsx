@@ -34,6 +34,7 @@ const QuestionFormAnswer = (props: IQuestionFormAnswer) => {
             -
           </button>
           <input {...register(`questions.${questionId}.answers.${index}.body`)} placeholder="answer" />
+          <input {...register(`questions.${questionId}.answers.${index}.is_right_answer`)} placeholder="answer" type="checkbox"/>
         </div>
       ))}
     </div>
