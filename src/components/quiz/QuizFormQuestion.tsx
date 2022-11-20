@@ -1,4 +1,5 @@
 import useQuizFromQuestion from "./hooks/useQuizFromQuestion";
+import QuestionFormAnswer from "./QuestionFormAnswer";
 
 const QuizFormQuestion = () => {
   const {
@@ -28,7 +29,7 @@ const QuizFormQuestion = () => {
           >
             -
           </button>
-          <input {...register(`questions.${index}.body`)} placeholder="questtion" />
+          <QuestionFormAnswer questionId={index}/>
         </div>
       ))}
     </div>

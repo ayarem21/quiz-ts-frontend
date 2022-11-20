@@ -1,9 +1,9 @@
 import { FormProvider } from "react-hook-form";
-import useCreateQuizForm from "./hooks/useQuizForm";
+import useQuizForm from "./hooks/useQuizForm";
 import QuizFormQuestion from "./QuizFormQuestion";
 
 const QuizForm = () => {
-    const { handleSubmit, methods } = useCreateQuizForm();
+    const { handleSubmit, methods } = useQuizForm();
  
     return (
       <FormProvider {...methods}>
@@ -12,6 +12,7 @@ const QuizForm = () => {
           <button type="submit">Submit</button>
         </form>
       </FormProvider>
+    
     );
 }
 
