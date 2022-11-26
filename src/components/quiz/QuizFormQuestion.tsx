@@ -1,3 +1,4 @@
+import { Button, TextField } from "@mui/material";
 import useQuizFromQuestion from "./hooks/useQuizFromQuestion";
 import QuestionFormAnswer from "./QuestionFormAnswer";
 
@@ -12,14 +13,15 @@ const QuizFormQuestion = () => {
   return (
     <div>
       <div>
-        <input {...register('title')} placeholder="Title" />
-        <input {...register('description')} placeholder="Description" />
-        <button
+        <TextField {...register('title')} placeholder="Title" variant="standard"/>
+        <TextField {...register('description')} placeholder="Description" variant="standard"/>
+        <Button
           type="button"
+          variant="outlined"
           onClick={addNewQuestion}
         >
           + Add question
-        </button>
+        </Button>
       </div>
       {fields.map((field, index) => (
         <div key={field.id}>
