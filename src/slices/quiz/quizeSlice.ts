@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { QuizzesInterface } from '../../interfaces/quiz/quizzesInterface';
 import quizAPI from '../../api/quiz/quizAPI'
+import { QuizInterface } from '../../interfaces/quiz/quizInterface';
 
 const initialState: QuizzesInterface = {
     quizzes: [],
@@ -19,6 +20,14 @@ export const quizSlice = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
+    addQuiz(state, action: PayloadAction<QuizInterface>) {
+      let quiz = {
+        title: action.payload.title,
+        description: action.payload.description,
+        isArchived: action.payload.isArchived
+      }
+      state.quizzes = [...state.quizzes, quiz];
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -35,3 +44,5 @@ export const quizSlice = createSlice({
 
  
 export default quizSlice.reducer;
+
+export const { addQuiz } = quizSlice.actions; 

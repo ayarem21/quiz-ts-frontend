@@ -8,7 +8,7 @@ const Quiz: React.FC<QuizInterface> = (props: QuizInterface) => {
         <div>
             <div>{title}</div>
             <div>{description}</div>
-            <div>{isArchived ? "Archived" : "Didn't archived"}</div>
+            <div>{isArchived ? "Archived" : "Didn't archive"}</div>
             <Link to={
                 `/quizzes/${id}`
             }>
