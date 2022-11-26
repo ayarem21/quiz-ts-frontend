@@ -12,7 +12,7 @@ const Quiz: React.FC<QuizInterface> = (props: QuizInterface) => {
             <Link to={
                 `/quizzes/${id}`
             }>
-                Edit
+                Pass it!
             </Link>
             <hr></hr>
         </div>

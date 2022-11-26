@@ -16,6 +16,15 @@ export const fetchQuizzesAsync = createAsyncThunk(
   }
 );
 
+export const fetchQuizQuestionsAsync = createAsyncThunk(
+  'quiz/fetchQuizQuestions',
+  async (quizId: string) => {
+    const response = await quizAPI.getAllQuizQuestions(quizId);
+    return response.data;
+  }
+);
+
+
 export const quizSlice = createSlice({
   name: 'quiz',
   initialState,
@@ -31,14 +40,34 @@ export const quizSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchQuizzesAsync.pending, (state) => {
-        state.isPending = true;
-      })
+      .addCase(fetchQuizzesAsync.pending, (state) => 
+        ({
+          ...state, 
+          isPending: true
+        })
+      )
     builder
-      .addCase(fetchQuizzesAsync.fulfilled, (state, action) => {
-        state.quizzes = action.payload;
-        state.isPending = false;
-      })
+      .addCase(fetchQuizzesAsync.fulfilled, (state, { payload }) => 
+        ({
+          ...state,
+          quizzes: payload,
+          isPending: false
+        })
+      )
+    builder
+      .addCase(fetchQuizQuestionsAsync.pending, (state) => 
+        ({
+          ...state, 
+          isPending: true
+        })
+      )
+    builder
+      .addCase(fetchQuizQuestionsAsync.fulfilled, (state, { payload }) => 
+      ({
+        ...state,
+        // quizzes: [...state.quizzes.find()]
+        isPending: false
+      }))
   },
 });
 

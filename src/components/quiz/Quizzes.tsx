@@ -9,9 +9,9 @@ function Quizzes () {
   return (
     <div>
         {
-            quizzesSelector.quizzes.map(q => {
-                return <Quiz key = {q.id} id = {q.id} title = {q.title} description={q.description} isArchived = {q.isArchived}/>
-            })
+          quizzesSelector.quizzes.map(q => {
+              return <Quiz key = {q.id} id = {q.id} title = {q.title} description={q.description} isArchived = {q.isArchived}/>
+          })
         }
     </div>
   )
